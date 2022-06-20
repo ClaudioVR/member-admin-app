@@ -9,32 +9,27 @@
           src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
           transition="scale-transition"
           width="40"
+          @click="$router.push('/')"
         />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
+        <span>MyAdminApp</span>
       </div>
 
       <v-spacer></v-spacer>
 
       <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        href="https://github.com/ClaudioVR?tab=repositories"
         target="_blank"
         text
       >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
+        <span class="custom-transform-class text-none">Claudio Rescigno</span>
+        <v-icon right>mdi-github</v-icon>
       </v-btn>
     </v-app-bar>
 
     <v-main>
-      <router-view />
+      <v-container>
+        <router-view />
+      </v-container>
     </v-main>
   </v-app>
 </template>
