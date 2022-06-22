@@ -17,7 +17,7 @@
       <v-spacer></v-spacer>
 
       <v-btn
-        href="https://github.com/ClaudioVR?tab=repositories"
+        href="https://github.com/ClaudioVR/member-admin-app"
         target="_blank"
         text
       >
@@ -35,7 +35,7 @@
     <v-footer class="mt-12">
       <v-col class="text-center" cols="12">
         <v-btn
-          href="https://github.com/ClaudioVR?tab=repositories"
+          href="https://github.com/ClaudioVR/member-admin-app"
           target="_blank"
           text
         >
