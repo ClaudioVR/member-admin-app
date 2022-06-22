@@ -1,6 +1,10 @@
 <template>
   <div class="about">
-    <h1>Create member</h1>
+    <v-btn class="mb-5" small @click="$router.go(-1)" color="primary" outlined>
+      <v-icon left>mdi-arrow-left</v-icon>
+      Back
+    </v-btn>
+    <h1>Creat new member</h1>
     <v-form class="mt-8" lazy-validation>
       <v-text-field
         v-model="name"
