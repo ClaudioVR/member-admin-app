@@ -68,6 +68,7 @@
 
 <script>
 export default {
+  name: "CreateMember",
   data() {
     return {
       valid: true,
@@ -87,9 +88,7 @@ export default {
         "4th Dan",
       ],
       selectedGrade: "",
-      date: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
-        .toISOString()
-        .substr(0, 10),
+      date: null,
       menu: false,
       sessionsTrained: null,
     };

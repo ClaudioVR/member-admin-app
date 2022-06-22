@@ -7,6 +7,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     members: "",
+    sessions: "",
     grades: [
       "1st Kyu",
       "2nd Kyu",
@@ -27,6 +28,40 @@ export default new Vuex.Store({
     },
     CREATE_MEMBER(state, data) {
       state.members.push(data);
+    },
+    SET_SESSIONS(state) {
+      const sessions = [
+        {
+          id: 1,
+          dateTime: new Date("2022-06-20"),
+          participants: [state.members[0], state.members[1], state.members[2]],
+        },
+        {
+          id: 2,
+          dateTime: new Date("2022-06-17"),
+          participants: [
+            state.members[0],
+            state.members[1],
+            state.members[2],
+            state.members[6],
+          ],
+        },
+        {
+          id: 4,
+          dateTime: new Date("2022-06-16"),
+          participants: [
+            state.members[0],
+            state.members[1],
+            state.members[2],
+            state.members[3],
+            state.members[4],
+          ],
+        },
+      ];
+      state.sessions = sessions;
+    },
+    ADD_NEW_SESSION(state, data) {
+      state.sessions.push(data);
     },
   },
   actions: {
@@ -55,6 +90,7 @@ export default new Vuex.Store({
         };
       });
       commit("SET_MEMBERS", newUsers);
+      commit("SET_SESSIONS");
     },
   },
   modules: {},

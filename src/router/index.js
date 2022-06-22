@@ -13,14 +13,17 @@ const routes = [
   {
     path: "/create-member",
     name: "createMember",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/CreateMember.vue"),
+    component: () => import("../views/CreateMember.vue"),
   },
   {
     path: "/members",
     name: "clubMembers",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/ClubMembers.vue"),
+    component: () => import("../views/ClubMembers.vue"),
+  },
+  {
+    path: "/record-session",
+    name: "recordSession",
+    component: () => import("../views/RecordSession.vue"),
   },
 ];
 

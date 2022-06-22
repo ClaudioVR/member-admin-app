@@ -5,7 +5,9 @@
       <v-img contain src="../assets/SkoyenAikidoLogo.jpg"></v-img>
       <!-- </v-avatar> -->
       <div class="buttons mt-8">
-        <v-btn block large color="pink" depressed dark>record session</v-btn>
+        <v-btn to="record-session" block large color="pink" depressed dark
+          >record session</v-btn
+        >
         <v-btn
           to="/create-member"
           large
@@ -16,7 +18,14 @@
           block
           >New member
         </v-btn>
-        <v-btn large class="mt-3" color="green " depressed dark block
+        <v-btn
+          to="/members"
+          large
+          class="mt-3"
+          color="green "
+          depressed
+          dark
+          block
           >View members
         </v-btn>
       </div>
