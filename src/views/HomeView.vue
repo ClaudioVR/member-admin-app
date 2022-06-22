@@ -9,27 +9,13 @@
               <p>Oslo, Norway</p>
             </div>
 
-            <v-btn block large color="orange" depressed dark
-              >record session</v-btn
-            >
-            <v-btn
-              to="/create-member"
-              large
-              class="mt-3"
-              color="pink "
-              depressed
-              dark
-              block
-              >New member
-            </v-btn>
-            <v-btn large class="mt-3" color="green " depressed dark block
-              >View members
-            </v-btn>
+            <homepage-large-buttons class="d-none d-sm-block" />
+            <homepage-small-buttons class="d-sm-none" />
           </v-col>
           <v-col cols="12" sm="6" md="4">
-            <calc-trainings-left class="mb-3" />
+            <calc-trainings-left class="mb-5" />
             <v-card outlined>
-              <v-card-title class="blue white--text">
+              <v-card-title class="text-body-1 blue white--text">
                 Attendance
                 <v-spacer></v-spacer>
                 Avg. 4,7
@@ -41,7 +27,7 @@
             <v-btn
               outlined
               large
-              class="mt-3"
+              class="mt-5"
               color="blue "
               depressed
               dark
@@ -58,10 +44,14 @@
 <script>
 import CalcTrainingsLeft from "@/components/CalcTrainingsLeft.vue";
 import LatestSessionMixedChart from "@/components/LatestSessionMixedChart.vue";
+import HomepageLargeButtons from "@/components/HomepageLargeButtons.vue";
+import HomepageSmallButtons from "@/components/HomepageSmallButtons.vue";
 export default {
   components: {
     CalcTrainingsLeft,
     LatestSessionMixedChart,
+    HomepageLargeButtons,
+    HomepageSmallButtons,
   },
   name: "HomeView",
   mounted() {

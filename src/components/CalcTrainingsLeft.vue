@@ -2,10 +2,10 @@
   <div>
     <v-card outlined>
       <v-card-text class="text-center">
-        <p class="font-weight-bold text-h3 orange--text">
+        <p class="font-weight-bold mb-1 text-h2 blue--text">
           {{ numberFutureTrainingDays }}
         </p>
-        <span class="text-h6"
+        <span class="text-h6 blue--text"
           >sessions left in {{ new Date().getFullYear() }}</span
         >
       </v-card-text>
