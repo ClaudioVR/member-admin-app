@@ -4,7 +4,7 @@
       <v-card-text>
         <v-row>
           <v-col cols="12" sm="6" md="8"></v-col>
-          <v-col cols="12" sm="6" md="4">
+          <v-col cols="12" sm="6" md="12">
             <calc-trainings-left class="mb-3" />
             <v-card outlined>
               <v-card-title class="blue white--text">
@@ -13,10 +13,9 @@
                 Avg. 4,7
               </v-card-title>
               <v-card-text>
-                <latest-sessions-chart />
+                <latest-session-mixed-chart />
               </v-card-text>
             </v-card>
-            <latest-sessions-mixed-chart />
           </v-col>
         </v-row>
       </v-card-text>
@@ -26,13 +25,11 @@
 
 <script>
 import CalcTrainingsLeft from "@/components/CalcTrainingsLeft.vue";
-import LatestSessionsChart from "@/components/LatestSessionsChart.vue";
-import LatestSessionsMixedChart from "@/components/LatestSessionsMixedChart.vue";
+import LatestSessionMixedChart from "@/components/LatestSessionMixedChart.vue";
 export default {
   components: {
     CalcTrainingsLeft,
-    LatestSessionsChart,
-    LatestSessionsMixedChart,
+    LatestSessionMixedChart,
   },
   name: "HomeView",
 };
