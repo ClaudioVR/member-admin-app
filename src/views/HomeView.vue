@@ -4,7 +4,7 @@
       <v-card-text>
         <div class="d-flex justify-space-between">
           <p>{{ localTime }}</p>
-          <p>Skoyen Aikido, Oslo (No)</p>
+          <p class="d-none d-md-block">Skoyen Aikido</p>
           <p>Oslo, Norway</p>
         </div>
         <v-row>
