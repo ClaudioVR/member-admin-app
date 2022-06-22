@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
+    <v-app-bar app color="primary" dark flat>
       <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"
@@ -37,7 +37,9 @@
 <script>
 export default {
   name: "App",
-
+  created() {
+    this.$store.dispatch("getUsers");
+  },
   data: () => ({
     //
   }),
