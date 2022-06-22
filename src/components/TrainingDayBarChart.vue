@@ -1,9 +1,7 @@
 <template>
   <v-card class="mb-5" outlined>
-    <v-card-title class="text-body-1 blue white--text">
-      Attendance
-      <v-spacer></v-spacer>
-      Avg. 4,7
+    <v-card-title class="text-body-1 orange white--text">
+      Sessions by popularity
     </v-card-title>
     <v-card-text>
       <Bar
@@ -67,20 +65,10 @@ export default {
             label: "Bar Dataset",
             data: [4, 2, 7, 8, 5, 4, 3],
             borderColor: "rgb(255, 99, 132)",
-            backgroundColor: "rgba(54, 162, 235, 0.2)",
-          },
-          {
-            type: "line",
-            label: "Average",
-            data: [4.7, 4.7, 4.7, 4.7, 4.7, 4.7, 4.7],
-            borderColor: "rgb(54, 162, 235, 0.8)",
-            backgroundColor: "rgb(54, 162, 235, 0.8)",
-            pointStyle: "circle",
-            radius: 1,
-            borderWidth: 1,
+            backgroundColor: "rgb(255, 152, 0, 0.2)",
           },
         ],
-        labels: ["Thurs", "Fri", "Mon", "Weds", "Thurs", "Fri", "Mon"],
+        labels: ["Mon", "Weds", "Thurs", "Fri"],
       },
       chartOptions: {
         responsive: true,

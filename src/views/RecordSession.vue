@@ -37,6 +37,17 @@
           </v-menu>
 
           <v-autocomplete
+            v-model="instructor"
+            :items="$store.state.members"
+            outlined
+            chips
+            small-chips
+            label="Instructor"
+            item-text="name"
+            return-object
+          ></v-autocomplete>
+
+          <v-autocomplete
             v-model="participants"
             :items="$store.state.members"
             outlined
@@ -48,7 +59,14 @@
             return-object
           ></v-autocomplete>
 
-          <p v-if="participants">{{ participants.length }} participants</p>
+          <div v-if="participants">
+            <p>
+              {{ participants.length + 1 }} participants
+              <span class="font-weight-light"
+                >(1 instructor + {{ participants.length }} participants)</span
+              >
+            </p>
+          </div>
           <v-btn
             @click="createSession"
             color="primary"
@@ -109,6 +127,7 @@ export default {
         .toISOString()
         .substr(0, 10),
       menu: false,
+      instructor: "",
       participants: "",
       headers: [
         {
@@ -131,6 +150,7 @@ export default {
       };
       this.$store.commit("ADD_NEW_SESSION", session);
       this.participants = "";
+      this.instructor = "";
       this.date = new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
         .toISOString()
         .substr(0, 10);

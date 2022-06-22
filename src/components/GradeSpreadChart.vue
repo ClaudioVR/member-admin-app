@@ -1,12 +1,10 @@
 <template>
   <v-card class="mb-5" outlined>
-    <v-card-title class="text-body-1 blue white--text">
-      Attendance
-      <v-spacer></v-spacer>
-      Avg. 4,7
+    <v-card-title class="text-body-1 green white--text">
+      Club grades
     </v-card-title>
     <v-card-text>
-      <Bar
+      <PolarArea
         :chart-options="chartOptions"
         :chart-data="chartData"
         :chart-id="chartId"
@@ -22,12 +20,12 @@
 </template>
 
 <script>
-import { Bar } from "vue-chartjs/legacy";
+import { PolarArea } from "vue-chartjs/legacy";
 import { Chart, registerables } from "chart.js";
 Chart.register(...registerables);
 export default {
   name: "BarChart",
-  components: { Bar },
+  components: { PolarArea },
   props: {
     chartId: {
       type: String,
@@ -43,7 +41,7 @@ export default {
     },
     height: {
       type: Number,
-      default: 250,
+      default: 400,
     },
     cssClasses: {
       default: "",
@@ -58,36 +56,42 @@ export default {
       default: () => {},
     },
   },
+  mounted() {},
   data() {
     return {
       chartData: {
+        labels: [
+          "6-5 Kyu",
+          "4-3 Kyu",
+          "3-2 Kyu",
+          "1 Kyu",
+          "1 Dan",
+          "2 Dan",
+          "3-4 Dan",
+        ],
         datasets: [
           {
-            type: "bar",
-            label: "Bar Dataset",
-            data: [4, 2, 7, 8, 5, 4, 3],
-            borderColor: "rgb(255, 99, 132)",
-            backgroundColor: "rgba(54, 162, 235, 0.2)",
-          },
-          {
-            type: "line",
-            label: "Average",
-            data: [4.7, 4.7, 4.7, 4.7, 4.7, 4.7, 4.7],
-            borderColor: "rgb(54, 162, 235, 0.8)",
-            backgroundColor: "rgb(54, 162, 235, 0.8)",
-            pointStyle: "circle",
-            radius: 1,
-            borderWidth: 1,
+            label: "My First Dataset",
+            data: [1, 2, 3, 3, 2, 2, 1],
+            backgroundColor: [
+              "#C8E6C9",
+              "#81C784",
+              "#43A047",
+              "#2E7D32",
+              "#BDBDBD",
+              "#616161",
+              "#212121",
+            ],
           },
         ],
-        labels: ["Thurs", "Fri", "Mon", "Weds", "Thurs", "Fri", "Mon"],
       },
       chartOptions: {
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
           legend: {
-            display: false,
+            display: true,
+            position: "left",
           },
         },
       },

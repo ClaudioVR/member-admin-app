@@ -1,9 +1,7 @@
 <template>
   <v-card class="mb-5" outlined>
-    <v-card-title class="text-body-1 blue white--text">
-      Attendance
-      <v-spacer></v-spacer>
-      Avg. 4,7
+    <v-card-title class="text-body-1 pink white--text">
+      Most training hours
     </v-card-title>
     <v-card-text>
       <Bar
@@ -58,6 +56,26 @@ export default {
       default: () => {},
     },
   },
+  mounted() {
+    this.chartData.labels = [
+      this.topPerformers[0].name,
+      this.topPerformers[1].name,
+      this.topPerformers[2].name,
+    ];
+    this.chartData.datasets[0].data = [
+      this.topPerformers[0].trainingSessions,
+      this.topPerformers[1].trainingSessions,
+      this.topPerformers[2].trainingSessions,
+    ];
+  },
+  computed: {
+    topPerformers() {
+      const array = this.$store.state.members
+        .slice(0)
+        .sort((a, b) => b.trainingSessions - a.trainingSessions);
+      return array.slice(0, 3);
+    },
+  },
   data() {
     return {
       chartData: {
@@ -65,22 +83,12 @@ export default {
           {
             type: "bar",
             label: "Bar Dataset",
-            data: [4, 2, 7, 8, 5, 4, 3],
+            data: "",
             borderColor: "rgb(255, 99, 132)",
-            backgroundColor: "rgba(54, 162, 235, 0.2)",
-          },
-          {
-            type: "line",
-            label: "Average",
-            data: [4.7, 4.7, 4.7, 4.7, 4.7, 4.7, 4.7],
-            borderColor: "rgb(54, 162, 235, 0.8)",
-            backgroundColor: "rgb(54, 162, 235, 0.8)",
-            pointStyle: "circle",
-            radius: 1,
-            borderWidth: 1,
+            backgroundColor: "rgba(233, 30, 99, 0.2)",
           },
         ],
-        labels: ["Thurs", "Fri", "Mon", "Weds", "Thurs", "Fri", "Mon"],
+        labels: "",
       },
       chartOptions: {
         responsive: true,
@@ -90,6 +98,7 @@ export default {
             display: false,
           },
         },
+        indexAxis: "y",
       },
     };
   },

@@ -1,12 +1,10 @@
 <template>
   <v-card class="mb-5" outlined>
     <v-card-title class="text-body-1 blue white--text">
-      Attendance
-      <v-spacer></v-spacer>
-      Avg. 4,7
+      Yudansha vs Mudansha
     </v-card-title>
     <v-card-text>
-      <Bar
+      <Pie
         :chart-options="chartOptions"
         :chart-data="chartData"
         :chart-id="chartId"
@@ -22,12 +20,12 @@
 </template>
 
 <script>
-import { Bar } from "vue-chartjs/legacy";
+import { Pie } from "vue-chartjs/legacy";
 import { Chart, registerables } from "chart.js";
 Chart.register(...registerables);
 export default {
   name: "BarChart",
-  components: { Bar },
+  components: { Pie },
   props: {
     chartId: {
       type: String,
@@ -43,7 +41,7 @@ export default {
     },
     height: {
       type: Number,
-      default: 250,
+      default: 400,
     },
     cssClasses: {
       default: "",
@@ -58,36 +56,28 @@ export default {
       default: () => {},
     },
   },
+  mounted() {
+    this.chartData.datasets[0].data = [4, 3];
+  },
   data() {
     return {
       chartData: {
         datasets: [
           {
-            type: "bar",
-            label: "Bar Dataset",
-            data: [4, 2, 7, 8, 5, 4, 3],
-            borderColor: "rgb(255, 99, 132)",
-            backgroundColor: "rgba(54, 162, 235, 0.2)",
-          },
-          {
-            type: "line",
-            label: "Average",
-            data: [4.7, 4.7, 4.7, 4.7, 4.7, 4.7, 4.7],
-            borderColor: "rgb(54, 162, 235, 0.8)",
-            backgroundColor: "rgb(54, 162, 235, 0.8)",
-            pointStyle: "circle",
-            radius: 1,
-            borderWidth: 1,
+            label: "Test",
+            data: "",
+            backgroundColor: ["rgb(255, 99, 132)", "rgb(54, 162, 235)"],
+            hoverOffset: 4,
           },
         ],
-        labels: ["Thurs", "Fri", "Mon", "Weds", "Thurs", "Fri", "Mon"],
+        labels: ["Yudansha", "Mudansha"],
       },
       chartOptions: {
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
           legend: {
-            display: false,
+            display: true,
           },
         },
       },

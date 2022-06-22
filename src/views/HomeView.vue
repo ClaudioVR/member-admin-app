@@ -4,7 +4,9 @@
       <v-card-text>
         <div class="d-flex justify-space-between">
           <p>{{ localTime }}</p>
-          <p class="d-none d-md-block">Skoyen Aikido</p>
+          <p class="d-none d-md-block text-h5 font-weight-medium">
+            Skoyen Aikido
+          </p>
           <p>Oslo, Norway</p>
         </div>
         <v-row>
@@ -25,18 +27,16 @@
                 </p>
               </v-card-text>
             </v-card>
-            <v-card class="mb-5" outlined>
-              <v-card-title class="text-body-1 blue white--text">
-                Attendance
-                <v-spacer></v-spacer>
-                Avg. 4,7
-              </v-card-title>
-              <v-card-text>
-                <latest-session-mixed-chart />
-              </v-card-text>
-            </v-card>
+            <latest-session-mixed-chart />
             <calc-trainings-left />
-            <v-btn large class="mt-5" color="blue " depressed dark block
+            <v-btn
+              to="/stats"
+              large
+              class="mt-5"
+              color="blue "
+              depressed
+              dark
+              block
               >View full stats
             </v-btn>
           </v-col>

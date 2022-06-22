@@ -9,7 +9,7 @@
           <v-col>
             <p class="text-body-1">
               Record a training session. Select the members who were present at
-              training. Select and instructor and save.
+              training. Select an instructor and save.
             </p>
             <v-btn to="record-session" block large color="pink" depressed dark
               >record session</v-btn

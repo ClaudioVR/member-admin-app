@@ -25,6 +25,11 @@ const routes = [
     name: "recordSession",
     component: () => import("../views/RecordSession.vue"),
   },
+  {
+    path: "/stats",
+    name: "clubStats",
+    component: () => import("../views/ClubStats.vue"),
+  },
 ];
 
 const router = new VueRouter({

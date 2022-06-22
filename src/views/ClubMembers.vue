@@ -84,10 +84,10 @@ export default {
         {
           text: "Name",
           align: "start",
-          sortable: false,
+          sortable: true,
           value: "name",
         },
-        { text: "Grade", value: "grade" },
+        { text: "Grade", value: "grade", sortable: false },
         { text: "Latest grading", value: "latestGrading" },
         { text: "Trained sessions", value: "trainingSessions" },
         { text: "Actions", value: "actions", sortable: false },
