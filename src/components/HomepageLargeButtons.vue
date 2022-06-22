@@ -48,7 +48,9 @@
               View all of your club's members. Edit member details, add and
               delete.
             </p>
-            <v-btn block large color="green" depressed dark>View members</v-btn>
+            <v-btn to="/members" block large color="green" depressed dark
+              >View members</v-btn
+            >
           </v-col>
         </v-row>
       </v-card-text>
