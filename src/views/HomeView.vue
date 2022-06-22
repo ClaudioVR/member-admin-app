@@ -4,7 +4,7 @@
       <v-card-text>
         <v-row>
           <v-col cols="12" sm="6" md="8"></v-col>
-          <v-col cols="12" sm="6" md="12">
+          <v-col cols="12" sm="6" md="4">
             <calc-trainings-left class="mb-3" />
             <v-card outlined>
               <v-card-title class="blue white--text">

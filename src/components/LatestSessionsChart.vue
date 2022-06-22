@@ -67,12 +67,17 @@ export default {
   data() {
     return {
       chartData: {
+        datasets: [{ data: [4, 2, 7, 8, 5, 4, 3] }],
         labels: ["Thurs", "Fri", "Mon", "Weds", "Thurs", "Fri", "Mon"],
       },
       chartOptions: {
         responsive: true,
         maintainAspectRatio: false,
-
+        // elements: {
+        //   bar: {
+        //     backgroundColor: "rgb(30,144,255, 0.2)",
+        //   },
+        // },
         plugins: {
           legend: {
             display: false,
