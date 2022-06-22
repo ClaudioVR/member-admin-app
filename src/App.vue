@@ -31,6 +31,21 @@
         <router-view />
       </v-container>
     </v-main>
+
+    <v-footer class="mt-12">
+      <v-col class="text-center" cols="12">
+        <v-btn
+          href="https://github.com/ClaudioVR?tab=repositories"
+          target="_blank"
+          text
+        >
+          <span class="custom-transform-class text-none"
+            >{{ new Date().getFullYear() }} — Claudio Rescigno</span
+          >
+          <v-icon right>mdi-github</v-icon>
+        </v-btn>
+      </v-col>
+    </v-footer>
   </v-app>
 </template>
 
