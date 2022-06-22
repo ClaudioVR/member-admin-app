@@ -25,6 +25,9 @@ export default new Vuex.Store({
     SET_MEMBERS(state, data) {
       state.members = data;
     },
+    CREATE_MEMBER(state, data) {
+      state.members.push(data);
+    },
   },
   actions: {
     async getUsers({ commit }) {
@@ -42,6 +45,7 @@ export default new Vuex.Store({
           startDate.getTime() +
             Math.random() * (endDate.getTime() - startDate.getTime())
         );
+        // Generate random number of training sessions
         const trainingSessions = Math.floor(Math.random() * (300 - 25));
         return {
           ...obj,

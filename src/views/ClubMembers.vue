@@ -25,6 +25,7 @@
       :items="$store.state.members"
       item-key="name"
       class="elevation-1"
+      :items-per-page="itemsPerPage"
     >
       <template v-slot:[`item.grade`]="{ item }">
         <div class="d-flex align-center">
@@ -77,6 +78,7 @@ export default {
   name: "ClubMembers",
   data() {
     return {
+      itemsPerPage: -1,
       search: "",
       headers: [
         {
